@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnProductReady(pNum, pTime) {
+            return new Promise((fnResolve) => {
+                setTimeout(() => {
+                    console.log(pNum);
+                    fnResolve('성공');
+                }, pTime);
+            });
+        }
+
+        function start() {
+            fnProductReady(1, 2000)
+            .then((pResult1) => {
+                console.log(pResult1);
+                return fnProductReady(2, 1000);
+            })
+            .then((pResult2) => {
+                console.log(pResult2);
+                return fnProductReady(3, 500);
+            }).then((pResult3) => {
+                console.log(pResult3);
+            }).catch((err) => {
+                console.log(err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="start()">시작</button>
+</body>
+</html>

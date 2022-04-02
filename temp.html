@@ -1,0 +1,6 @@
+<script type="text/javascript">
+    var data;
+    data = fetch('https://cors-anywhere.herokuapp.com/https://slds2.tistory.com/rss')
+    .then(pResponse => pResponse.text())
+    .then(pJSON => console.log(pJSON));
+  </script>
