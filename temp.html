@@ -1,6 +1,40 @@
-<script type="text/javascript">
-    var data;
-    data = fetch('https://cors-anywhere.herokuapp.com/https://slds2.tistory.com/rss')
-    .then(pResponse => pResponse.text())
-    .then(pJSON => console.log(pJSON));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <ul id="user-list">
+    <li v-for="(item, index) in userList">
+      번호: {{index}}<br>
+      이름: {{item.userName}}<br>
+      나이: {{item.userAge}}<br>
+    </li>
+  </ul>
+  <script>
+    new Vue({
+      el: '#user-list',
+      data: {
+        userList: [
+          {
+            userName: '홍길동',
+            userAge: 27
+          },
+          {
+            userName: '고길동',
+            userAge: 30
+          },
+          {
+            userName: '김길동',
+            userAge: 42
+          },
+        ]
+      }
+    });  
   </script>
+</body>
+</html>
