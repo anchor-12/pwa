@@ -31,9 +31,7 @@
                 }
             },
             actions: {
-                async fnDecData({
-                    commit
-                }, state) {
+                async fnDecData({commit}, state) {
                     const result = await api.fnDecrement();
                     if (result == true) commit('fnDecData')
                 }
