@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-app-bar app flat color="primary">
+                <v-toolbar-title class="white-text mx-auto">Beetle</v-toolbar-title>
+            </v-app-bar>
+            <v-main>
+                <v-container>
+                    <v-row>
+                        <v-col cols="12" sm="6">
+                            <h2 class="mb-3">About Beetle</h2>
+                            <p>contents...</p>
+                        </v-col>
+                        <v-col cols="12" sm="6">
+                            <h2 class="mb-3">Beetle's Target</h2>
+                            <p>1. contents</p>
+                            <p>2. contents</p>
+                            <p>3. contents</p>
+                            <p>4. contents</p>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-main>
+            <v-footer color="primary" dark>
+                <div class="mx-auto">Copyright &copy; {{new Date().getFullYear()}}</div>
+            </v-footer>
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+        });
+    </script>
+</body>
+</html>
