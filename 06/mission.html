@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <template>
+            <div>
+                <v-system-bar
+                    dark
+                    color="primary"
+                    height="30"
+                >
+                    <v-spacer></v-spacer>
+                    <v-icon>mdi-wifi-strength-4</v-icon>
+                    <v-icon>mdi-signal-cellular-outline</v-icon>
+                    <v-icon>mdi-battery</v-icon>
+                    <span>12:30</span>
+                </v-system-bar>
+            </div>
+        </template>
+        <v-app :style="width"  class="overflow-hidden">
+            <v-app-bar
+                absolute
+                elevation="1"
+                color="white"
+            >
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                <v-toolbar-title>Title</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn icon>
+                    <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+                <v-btn icon>
+                    <v-icon>mdi-heart</v-icon>
+                </v-btn>
+                <v-btn icon>
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+            </v-app-bar>
+            <v-main>
+            </v-main>
+            <template>
+                <v-footer
+                    color="primary lighten-1"
+                    padless
+                >
+                    <v-row
+                        justify="center"
+                        no-gutters
+                    >
+                        <v-btn
+                            v-for="link in links"
+                            :key="link"
+                            color="white"
+                            text
+                            rounded
+                            class="my-2"
+                        >   
+                            {{link}}
+                        </v-btn>
+                    </v-row>
+                    <v-row
+                        justify="center"
+                        no-gutters
+                    >
+                        <v-col
+                            class="primary lighten-2 py-4 text-center white--text"
+                            col="12"
+                        >
+                            {{new Date().getFullYear()}} - <strong>Vuetify</strong>
+                        </v-col>
+                    </v-row>
+                </v-footer>
+            </template>
+            <v-btn
+                fab
+                fixed
+                bottom
+                right
+            >
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                links: [
+                    "Home",
+                    "About us",
+                    "Team",
+                    "Services",
+                    "Blog",
+                    "Contact us"
+                ]
+            },
+            computed: {
+                test: function() {
+                    console.log(this.$vuetify.breakpoint.width);
+                },
+                width: function() {
+                    // switch(this.$vuetify.breakpoint.name) {
+                    //     case 'xs': return 'padding: 16px;'
+                    //     case 'sm': return 'padding: 16px;'
+                    //     case 'md': return 'padding: 16px;'
+                    //     case 'lg': return 'padding: 16px;'
+                    //     case 'xl': return 'padding: 16px;'
+                    // }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

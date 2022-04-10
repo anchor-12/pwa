@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-main>
+                <v-card height="100%" class="d-flex display-2 align-center justify-center">선택: {{sSelect}}</v-card>
+                <v-footer>
+                    <v-bottom-navigation
+                        absolute
+                        v-model="sSelect"
+                        dark
+                    >
+                        <v-btn text value="자전거">
+                            자전거
+                            <v-icon>mdi-bike</v-icon>
+                        </v-btn>
+                        <v-btn text value="지하철">
+                            지하철
+                            <v-icon>mdi-subway</v-icon>
+                        </v-btn>
+                        <v-btn text value="버스">
+                            버스
+                            <v-icon>mdi-bus</v-icon>
+                        </v-btn>
+                    </v-bottom-navigation>
+                </v-footer>
+            </v-main>
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                sSelect: '자전거'
+            }
+        });
+    </script>
+</body>
+</html>
