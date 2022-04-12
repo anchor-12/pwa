@@ -39,7 +39,10 @@
 
     <v-main>
       <v-text-field v-model="message.myMessage" label="Main input"></v-text-field>
-      <com-child v-bind="message"></com-child>
+      <com-child v-bind="message" v-bind:message="message"></com-child>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/sub">Sub</router-link>
       <router-view/>
     </v-main>
   </v-app>
@@ -56,6 +59,6 @@ export default {
       myMessage: '',
       isComplete: false
     }
-  }),
+  })
 };
 </script>
